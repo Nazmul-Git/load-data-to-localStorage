@@ -3,6 +3,7 @@
 // Code :
 
 const addToLocalStorage=(id)=>{
+
     let shoppingCart;
 
     // get the shopping cart-----------------------------------------
