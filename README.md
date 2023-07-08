@@ -1,18 +1,11 @@
-# load-data-to-localStorage
-
-// Code :
-
 const addToLocalStorage=(id)=>{
 
-    let shoppingCart;
+    let shoppingCart={};
 
     // get the shopping cart-----------------------------------------
     const storedCart=localStorage.getItem('shopping-cart');
     if(storedCart){
         shoppingCart=JSON.parse(storedCart);
-    }
-    else{
-        shoppingCart={};
     }
 
     // add quantity------------------------------------
@@ -20,7 +13,7 @@ const addToLocalStorage=(id)=>{
     
     if(quantity){
        console.log('Already exists');
-       const newQuantity=parseInt(quantity)+1;
+       const newQuantity=quantity+1;
        shoppingCart[id]=newQuantity;
     }
     else{
