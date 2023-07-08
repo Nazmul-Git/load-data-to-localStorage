@@ -44,7 +44,9 @@ const addToLocalStorage=(id)=>{
 
     //set data
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
-    }
+
+    
+}
 
 
     export {addToLocalStorage, removeFromLocalStorage, deleteShoppingCart}
