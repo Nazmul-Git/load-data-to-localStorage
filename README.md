@@ -1,5 +1,6 @@
 const addToLocalStorage=(id)=>{
 
+    //   ---------------------------Add----------------------------------------
     let shoppingCart={};
 
     // get the shopping cart-----------------------------------------
@@ -20,7 +21,30 @@ const addToLocalStorage=(id)=>{
         shoppingCart[id]=1;
     }
 
+
+
+
+    //   ---------------------------Remove----------------------------------------
+    const removeFromLocalStorage=(id)=>{
+    const storedCart=localStorage.getItem('shopping-cart');
+    if(storedCart){
+        const shoppingCart=JSON.parse(storedCart);
+        if(id in shoppingCart){
+            delete shoppingCart[id];
+            localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+         }
+       }
+    }
+
+    //   ---------------------------Delete all----------------------------------------
+    const deleteShoppingCart=()=>{
+    localStorage.removeItem('shopping-cart');
+    }
+    
+
     //set data
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
-}
-export {addToLocalStorage}
+    }
+
+
+    export {addToLocalStorage, removeFromLocalStorage, deleteShoppingCart}
