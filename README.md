@@ -1,4 +1,5 @@
 const addToLocalStorage=(id)=>{
+
     //   ---------------------------Add----------------------------------------
     let shoppingCart={};
 
