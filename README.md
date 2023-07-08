@@ -1,6 +1,5 @@
-const addToLocalStorage=(id)=>{
 
-    //   ---------------------------Add----------------------------------------
+    const addToLocalStorage=(id)=>{
     let shoppingCart={};
 
     // get the shopping cart-----------------------------------------
@@ -13,7 +12,7 @@ const addToLocalStorage=(id)=>{
     const quantity=shoppingCart[id];
     
     if(quantity){
-       console.log('Already exists');
+    //    console.log('Already exists');
        const newQuantity=quantity+1;
        shoppingCart[id]=newQuantity;
     }
@@ -21,8 +20,10 @@ const addToLocalStorage=(id)=>{
         shoppingCart[id]=1;
     }
 
-
-
+    //set data
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+    
+    }
 
     //   ---------------------------Remove----------------------------------------
     const removeFromLocalStorage=(id)=>{
@@ -32,7 +33,7 @@ const addToLocalStorage=(id)=>{
         if(id in shoppingCart){
             delete shoppingCart[id];
             localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
-         }
+          }
        }
     }
 
@@ -41,12 +42,4 @@ const addToLocalStorage=(id)=>{
     localStorage.removeItem('shopping-cart');
     }
     
-
-    //set data
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
-
-    
-}
-
-
     export {addToLocalStorage, removeFromLocalStorage, deleteShoppingCart}
